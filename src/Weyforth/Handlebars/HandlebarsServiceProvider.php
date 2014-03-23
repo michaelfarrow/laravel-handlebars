@@ -7,7 +7,7 @@
  * @copyright Mike Farrow
  */
 
-namespace Twombolr\Handlebars;
+namespace Weyforth\Handlebars;
 
 use Illuminate\Support\ServiceProvider;
 

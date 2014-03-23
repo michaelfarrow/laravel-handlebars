@@ -11,7 +11,7 @@
  * @copyright Mike Farrow
  */
 
-namespace Twombolr\Handlebars;
+namespace Weyforth\Handlebars;
 
 use Illuminate\View\Engines\EngineInterface;
 use Illuminate\Filesystem\Filesystem;
