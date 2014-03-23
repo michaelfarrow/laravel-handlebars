@@ -1,0 +1,28 @@
+{
+    "name": "weyforth/handlebars",
+    "description": "",
+    "license": "proprietary",
+    "repositories": [
+        { "type":"git", "url":"git@bitbucket.org:weyforth/js.git" }
+    ],
+    "require": {
+        "illuminate/support": "4.1.*",
+        "illuminate/config": "4.1.*",
+        "illuminate/view": "4.1.*",
+        "illuminate/filesystem": "4.1.*",
+        "illuminate/session": "4.1.*",
+        "xamin/handlebars.php": "dev-master",
+        "weyforth/js": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Mike Farrow",
+            "email": "contact@mikefarrow.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Weyforth\\Handlebars": "src/"
+        }
+    }
+}
