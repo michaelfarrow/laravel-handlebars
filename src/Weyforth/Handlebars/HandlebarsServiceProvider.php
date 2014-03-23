@@ -35,7 +35,7 @@ class HandlebarsServiceProvider extends ServiceProvider
 
         $app->extend('view.engine.resolver', function ($resolver, $app) {
             $resolver->register('handlebars', function () use ($app) {
-                return $app->make('Twombolr\Handlebars\HandlebarsEngine');
+                return $app->make('Weyforth\Handlebars\HandlebarsEngine');
             });
 
             return $resolver;
