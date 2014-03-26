@@ -68,11 +68,13 @@ class HandlebarsEngine implements EngineInterface
                 $item;
         }, $data);
 
+        // TODO: method to allow custom data
         $standardData = array(
             'errors' => Session::has('errors') ? Session::get('errors')->all() : null,
             'error' => Session::has('errors') ? Session::get('errors')->first() : null,
             'message' => Session::has('message') ? Session::get('message') : null,
-            'input' => Session::has('input') ? Session::get('input') : null,
+            'input' => Session::has('_old_input') ? Session::get('_old_input') : null,
+            'success' => Session::has('success') ? Session::get('success') : null,
         );
 
         $data = array_merge($data, $standardData);
