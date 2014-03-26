@@ -56,6 +56,10 @@ class HandlebarsEngine implements EngineInterface
         $app  = app();
         $h    = new Handlebars();
 
+        $h->addHelper('trans', function($template, $context, $var, $ff){
+            return trans(substr($var, 1, -1));
+        });
+
         $paths = Config::get('view.paths');
 
         $data = array_map(function ($item) {
