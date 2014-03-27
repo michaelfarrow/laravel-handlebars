@@ -35,12 +35,12 @@ class Handlebars
     /**
      * Add a helper to the render engine.
      *
-     * @param string  $name     Name of the helper to add.
-     * @param Closure $function Helper function.
+     * @param string $name     Name of the helper to add.
+     * @param string $function Helper function.
      *
      * @return void
      */
-    public function addHelper($name, Closure $function)
+    public function addHelper($name, $function)
     {
         $this->helpers[$name] = $function;
     }
