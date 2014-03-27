@@ -33,6 +33,8 @@ class HandlebarsServiceProvider extends ServiceProvider
     {
         $app = $this->app;
 
+        $app->instance('handlebars', new Handlebars);
+
         $app->extend('view.engine.resolver', function ($resolver, $app) {
             $resolver->register('handlebars', function () use ($app) {
                 return $app->make('Weyforth\Handlebars\HandlebarsEngine');
