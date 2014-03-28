@@ -3,8 +3,8 @@
  * Handlebars extension to the Laravel View class.
  *
  * Loads and renders handlebars templates, and stores
- * the templates in memory for inclusion in source files
- * using the JsVars class.
+ * the templates and variable in memory for inclusion
+ * in source files later on.
  *
  * @author    Mike Farrow <contact@mikefarrow.co.uk>
  * @license   Proprietary/Closed Source
@@ -20,7 +20,6 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 use Weyforth\Handlebars\Support\Handlebars as HandlebarsHelpers;
 use LightnCandy;
-use Weyforth\JS\JsVar;
 
 class HandlebarsEngine implements EngineInterface
 {
@@ -44,7 +43,7 @@ class HandlebarsEngine implements EngineInterface
      *
      * Renders template using data supplied, as well as inserting commonly
      * required data such as errors, messages and input. Also stores
-     * unrendered template in JsVar container for inclusion later on.
+     * unrendered template and data in memory for inclusion later on.
      *
      * @param string $path Path of template.
      * @param array  $data Data to inject into template.
@@ -57,7 +56,7 @@ class HandlebarsEngine implements EngineInterface
         $app  = app();
 
         $helpers = HandlebarsHelpers::getHelpers();
-        $args = array(
+        $args    = array(
             'helpers' => array()
         );
 
@@ -100,7 +99,10 @@ class HandlebarsEngine implements EngineInterface
         $pathNoExt = explode('.', $path);
         array_pop($pathNoExt);
 
-        JsVar::container('templates')->add(str_replace('/', '.', implode('.', $pathNoExt)), $view);
+
+        $data['templates'][str_replace('/', '.', implode('.', $pathNoExt))] = $view;
+
+        HandlebarsHelpers::addVars($data);
 
         return $rendered;
     }

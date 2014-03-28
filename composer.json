@@ -11,8 +11,7 @@
         "illuminate/view": "4.1.*",
         "illuminate/filesystem": "4.1.*",
         "illuminate/session": "4.1.*",
-        "zordius/lightncandy": "dev-master",
-        "weyforth/js": "dev-master"
+        "zordius/lightncandy": "dev-master"
     },
     "authors": [
         {
