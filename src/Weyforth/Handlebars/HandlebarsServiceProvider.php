@@ -10,6 +10,8 @@
 namespace Weyforth\Handlebars;
 
 use Illuminate\Support\ServiceProvider;
+use Config;
+use View;
 
 class HandlebarsServiceProvider extends ServiceProvider
 {
@@ -44,10 +46,12 @@ class HandlebarsServiceProvider extends ServiceProvider
         });
 
         $app->extend('view', function ($env, $app) {
-            $env->addExtension('handlebars', 'handlebars');
+            $env->addExtension(Config::get('view.handlebars.extension', 'handlebars'), 'handlebars');
 
             return $env;
         });
+
+        View::addNamespace('Handlebars', Config::get('view.handlebars.location'));
     }
 
 
