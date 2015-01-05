@@ -1,16 +1,16 @@
 {
-    "name": "weyforth/handlebars",
+    "name": "weyforth/laravel-handlebars",
     "description": "",
     "license": "proprietary",
     "repositories": [
         { "type":"git", "url":"git@bitbucket.org:weyforth/js.git" }
     ],
     "require": {
-        "illuminate/support": "4.1.*",
-        "illuminate/config": "4.1.*",
-        "illuminate/view": "4.1.*",
-        "illuminate/filesystem": "4.1.*",
-        "illuminate/session": "4.1.*",
+        "illuminate/support": "4.2.*",
+        "illuminate/config": "4.2.*",
+        "illuminate/view": "4.2.*",
+        "illuminate/filesystem": "4.2.*",
+        "illuminate/session": "4.2.*",
         "zordius/lightncandy": "dev-master"
     },
     "authors": [
